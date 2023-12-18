@@ -65,20 +65,21 @@ export default defineComponent({
         if (cycleCount.value < 4) {
           // Start the next cycle
           time1.value = 1500; // Reset time for the work
-          interval1.value = setInterval(deduceTime1, 10);
+          interval1.value = setInterval(deduceTime1, 1000);
         } else {
           // Reset after 4 cycles
           // cycleCount.value = 0;
           time1.value = 1500; // Reset time for the work
           isTime1.value = true;
           isTime2.value = false;
+          resetTime()
         }
       }
     };
 
     const startTime = () => {
       // Start the first cycle
-      interval1.value = setInterval(deduceTime1, 10);
+      interval1.value = setInterval(deduceTime1, 1000);
       isTime1.value = true;
       isTime2.value = false;
       state.value= 'running'
